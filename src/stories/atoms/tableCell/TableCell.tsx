@@ -19,9 +19,23 @@ const TableTagCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
   )
 }
 
+const TableAvatarCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
+  if (!label) return null
+
+  return (
+    <Styled.TableCell variant={variant}>
+      <Tag
+        label={label}
+        variant={tagVariant}
+      />
+    </Styled.TableCell>
+  )
+}
+
 const TableDataTypes: Record<VariantProps, React.FC<Props>> = {
   tag: TableTagCell,
-  default: DefaultTableCell
+  default: DefaultTableCell,
+  avatar: TableAvatarCell
 }
 
 export const TableCell: React.FC<Props> = ({

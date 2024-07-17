@@ -1,4 +1,4 @@
-export type VariantProps = 'default' | 'tag'
+export type VariantProps = 'default' | 'tag' | 'avatar'
 import { VariantProps as TagVariants } from '../tag/Tag.types'
 
 export interface Props {
