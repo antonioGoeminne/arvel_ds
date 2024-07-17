@@ -5,7 +5,7 @@ export interface Props {
   variant?: VariantProps
   textColor?: string
   onClick?: () => void
-  label?: string // children
-  children?: React.ReactNode
+  label: string // children
+  children: React.ReactNode
   tagVariant?: TagVariants
 }

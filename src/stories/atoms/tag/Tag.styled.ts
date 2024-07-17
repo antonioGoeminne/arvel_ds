@@ -17,7 +17,7 @@ const getTagBackgroundColor = (variant: VariantProps): string => {
     case 'warning':
       return '#fcdec0'
     default:
-      return '#1a303d'
+      return '#dfe4e8'
   }
 }
 
@@ -32,13 +32,14 @@ const getLabelColor = (variant: VariantProps): string => {
     case 'warning':
       return '#1a303d'
     default:
-      return '#fff'
+      return '#151e26'
   }
 }
 
 export const Tag = styled.div<TagProps>`
+  font-family: 'Roboto', sans-serif;
   display: inline-block;
-  font-weight: 800;
+  font-weight: 700;
   color: ${(props) => getLabelColor(props.variant)};
   padding: 0.2rem 0.4rem;
   font-size: 0.8rem;

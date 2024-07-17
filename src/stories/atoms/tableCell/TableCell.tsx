@@ -7,6 +7,8 @@ const DefaultTableCell: React.FC<Props> = ({ variant, children }) => {
 }
 
 const TableTagCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
+  if (!label) return null
+
   return (
     <Styled.TableCell variant={variant}>
       <Tag

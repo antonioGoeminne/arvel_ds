@@ -7,6 +7,8 @@ interface TableCellProps {
 }
 
 export const TableCell = styled.td<TableCellProps>`
-  padding: 0.25rem 0.45rem;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.8rem;
+  box-shadow: 0 0 0 0.8px rgba(0, 0, 0, 0.1);
 `
