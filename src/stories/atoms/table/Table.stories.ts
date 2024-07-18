@@ -4,7 +4,7 @@ import { VariantProps as TagVariants } from '../tag/Tag.types'
 import { Table } from './Table'
 
 const meta: Meta<typeof Table> = {
-  title: 'Atoms/Table/Table',
+  title: 'Molecule/Table',
   component: Table,
   parameters: {
     layout: 'centered'
@@ -23,6 +23,7 @@ interface Default {
   tagVariant?: TagVariants
   src?: string
   alt?: string
+  price?: string | number
 }
 
 const defaultSrc =
@@ -35,23 +36,26 @@ const defaultItems: Default[] = [
     alt: 'taza ed madera',
     status: 'inactive',
     tagVariant: 'inactive',
-    id: '1'
+    price: 2000,
+    id: 'ZzqnUMuSnddBHIz2dwVM'
   },
   {
     name: 'Taza de madera',
     src: defaultSrc,
     alt: 'taza ed madera',
-    status: 'inactive',
+    status: 'active',
+    price: 15000,
     tagVariant: 'active',
-    id: '2'
+    id: 'ZZ8OAzm4bu280uOrVOmY'
   },
   {
     name: 'Taza de madera',
     src: defaultSrc,
     alt: 'taza ed madera',
     status: 'default',
+    price: 50000,
     tagVariant: 'default',
-    id: '3'
+    id: 'ZuvrdtsfmxGecqGiH2iN'
   }
 ]
 
@@ -60,7 +64,9 @@ export const Default: Story = {
     items: defaultItems,
     columns: [
       { label: 'Nombre', key: 'name', variant: 'avatar' },
-      { label: 'Estado', key: 'status', variant: 'tag' }
+      { label: 'Estado', key: 'status', variant: 'tag' },
+      { label: 'Precio', key: 'price', variant: 'price' },
+      { label: 'ID', key: 'id' }
     ],
     getKey: (item) => item.id
   }

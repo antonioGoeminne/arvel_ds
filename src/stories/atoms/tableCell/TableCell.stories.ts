@@ -43,3 +43,10 @@ export const Avatar: Story = {
     alt: 'Taza de madera'
   }
 }
+
+export const Price: Story = {
+  args: {
+    variant: 'price',
+    label: '15000'
+  }
+}

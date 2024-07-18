@@ -6,6 +6,10 @@ interface TableCellProps {
   variant?: VariantProps
 }
 
+interface LabelProps {
+  sx?: Record<string, string>
+}
+
 export const TableCell = styled.td<TableCellProps>`
   font-family: 'Roboto', sans-serif;
   padding: 0.35rem 0.45rem;
@@ -18,6 +22,7 @@ export const Flex = styled.span`
   align-items: center;
 `
 
-export const Label = styled.span`
-  white-space: nowrap;
-`
+export const Label = styled.span<LabelProps>((props) => ({
+  whiteSpace: 'nowrap',
+  ...props.sx
+}))

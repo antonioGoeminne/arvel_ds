@@ -1,4 +1,4 @@
-export type VariantProps = 'default' | 'tag' | 'avatar'
+export type VariantProps = 'default' | 'tag' | 'avatar' | 'price'
 import { Sizes } from '../avatar/Avatar.types'
 import { VariantProps as TagVariants } from '../tag/Tag.types'
 

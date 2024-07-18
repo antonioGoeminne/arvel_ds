@@ -1,3 +1,4 @@
+import { numberWithCommas } from '../../../utils/numberWithCommas'
 import { Avatar } from '../avatar/Avatar'
 import { Tag } from '../tag/Tag'
 import * as Styled from './TableCell.styled'
@@ -43,10 +44,21 @@ const TableAvatarCell: React.FC<Props> = ({
   )
 }
 
+const TablePriceCell: React.FC<Props> = ({ label, variant }) => {
+  return (
+    <Styled.TableCell variant={variant}>
+      <Styled.Label sx={{ color: '#188037', fontWeight: 'bold' }}>
+        ${numberWithCommas(Number(label))}
+      </Styled.Label>
+    </Styled.TableCell>
+  )
+}
+
 const TableDataTypes: Record<VariantProps, React.FC<Props>> = {
   tag: TableTagCell,
   default: DefaultTableCell,
-  avatar: TableAvatarCell
+  avatar: TableAvatarCell,
+  price: TablePriceCell
 }
 
 export const TableCell: React.FC<Props> = ({
