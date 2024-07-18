@@ -13,7 +13,7 @@ const calcSize = (size?: Sizes): { width: string; height: string } => {
     case 'sm':
       return { width: '24px', height: '24px' }
     case 'md':
-      return { width: '44px', height: '44px' }
+      return { width: '32px', height: '32px' }
     case 'lg':
       return { width: '66px', height: '66px' }
     case 'xl':
@@ -24,7 +24,6 @@ const calcSize = (size?: Sizes): { width: string; height: string } => {
 }
 
 export const Avatar = styled.img<AvatarProps>`
-  flex: 0 0 96px;
   width: ${(props) => calcSize(props.size).width};
   height: ${(props) => calcSize(props.size).height};
   margin: 0;

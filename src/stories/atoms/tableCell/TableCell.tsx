@@ -1,3 +1,4 @@
+import { Avatar } from '../avatar/Avatar'
 import { Tag } from '../tag/Tag'
 import * as Styled from './TableCell.styled'
 import { Props, VariantProps } from './TableCell.types'
@@ -19,15 +20,25 @@ const TableTagCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
   )
 }
 
-const TableAvatarCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
-  if (!label) return null
+const TableAvatarCell: React.FC<Props> = ({
+  label,
+  variant,
+  src,
+  alt,
+  size = 'sm'
+}) => {
+  if (!src || !alt) return null
 
   return (
     <Styled.TableCell variant={variant}>
-      <Tag
-        label={label}
-        variant={tagVariant}
-      />
+      <Styled.Flex>
+        <Avatar
+          size={size}
+          src={src}
+          alt={alt}
+        />
+        <Styled.Label>{label}</Styled.Label>
+      </Styled.Flex>
     </Styled.TableCell>
   )
 }

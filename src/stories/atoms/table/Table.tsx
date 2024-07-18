@@ -48,6 +48,7 @@ export const Table = <T extends DefaultProps>({
                   c.format ? c.format(item) : (item[c.key as keyof T] as string)
                 }
                 variant={(c.variant as VariantProps) || 'default'}
+                {...item}
               >
                 {c.format ? c.format(item) : (item[c.key as keyof T] as string)}
               </TableCell>
