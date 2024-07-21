@@ -10,15 +10,27 @@ export const Textfield: React.FC<Props> = ({
 }) => {
   return (
     <Styled.Box>
-      <Styled.Label>{label}</Styled.Label>
+      <Styled.Label data-testid="inputLabel">{label}</Styled.Label>
       <div style={{ position: 'relative' }}>
         <Styled.Input
           size={size}
           placeholder={placeholder}
         ></Styled.Input>
-        {isLoading && <Styled.Spinner size={size} />}
+        {isLoading && (
+          <Styled.Spinner
+            data-testid="spinner"
+            size={size}
+          />
+        )}
       </div>
-      {!!error?.length && <Styled.Error size={size}>{error}</Styled.Error>}
+      {!!error?.length && (
+        <Styled.Error
+          data-testid="error"
+          size={size}
+        >
+          {error}
+        </Styled.Error>
+      )}
     </Styled.Box>
   )
 }
