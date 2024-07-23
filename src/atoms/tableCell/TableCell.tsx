@@ -1,4 +1,4 @@
-import { numberWithCommas } from '../../../utils/numberWithCommas'
+import { numberWithCommas } from '../../utils/numberWithCommas'
 import { Avatar } from '../avatar/Avatar'
 import { Tag } from '../tag/Tag'
 import * as Styled from './TableCell.styled'

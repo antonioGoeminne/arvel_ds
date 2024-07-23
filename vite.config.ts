@@ -8,10 +8,11 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'lvlup-components'
+      name: 'arvel_ds'
     },
     target: 'es6',
     minify: false,
+    sourcemap: true,
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
@@ -26,7 +27,7 @@ export default defineConfig({
     react(),
     dts({
       include: ['src'],
-      exclude: ['**/*.test.tsx?']
+      exclude: ['**/*.test.tsx?', 'vitest.config.*']
     })
   ]
 })
