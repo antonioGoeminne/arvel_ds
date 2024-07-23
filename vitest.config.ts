@@ -8,15 +8,27 @@ export default mergeConfig(
     test: {
       globals: true,
       setupFiles: './tests/setup',
-      environment: 'jsdom'
-      // coverage: {
-      //   thresholds: {
-      //     lines: 10,
-      //     functions: 10,
-      //     branches: 10,
-      //     statements: 10
-      //   }
-      // }
+      environment: 'jsdom',
+      coverage: {
+        exclude: [
+          'commitlint.config.cjs',
+          'tailwind.config.js',
+          '.eslintrc.cjs',
+          'vite.config.ts',
+          'vitest.config.ts',
+          'tests',
+          '**/*.stories.ts',
+          '**/*.styled.ts',
+          'dist',
+          '.storybook'
+        ]
+        // thresholds: {
+        //   lines: 10,
+        //   functions: 10,
+        //   branches: 10,
+        //   statements: 10
+        // }
+      }
     }
   })
 )
