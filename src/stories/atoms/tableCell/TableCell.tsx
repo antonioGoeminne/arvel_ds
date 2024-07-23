@@ -10,10 +10,13 @@ const DefaultTableCell: React.FC<Props> = ({ variant, children }) => {
 
 const TableTagCell: React.FC<Props> = ({ label, variant, tagVariant }) => {
   if (!label) return null
-
   return (
-    <Styled.TableCell variant={variant}>
+    <Styled.TableCell
+      data-testid="tagCell"
+      variant={variant}
+    >
       <Tag
+        data-testid="tag"
         label={label}
         variant={tagVariant}
       />
@@ -31,8 +34,11 @@ const TableAvatarCell: React.FC<Props> = ({
   if (!src || !alt) return null
 
   return (
-    <Styled.TableCell variant={variant}>
-      <Styled.Flex>
+    <Styled.TableCell
+      data-testid="avatarCell"
+      variant={variant}
+    >
+      <Styled.Flex data-testid="avatar">
         <Avatar
           size={size}
           src={src}
@@ -55,8 +61,8 @@ const TablePriceCell: React.FC<Props> = ({ label, variant }) => {
 }
 
 const TableDataTypes: Record<VariantProps, React.FC<Props>> = {
-  tag: TableTagCell,
   default: DefaultTableCell,
+  tag: TableTagCell,
   avatar: TableAvatarCell,
   price: TablePriceCell
 }
