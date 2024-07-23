@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { VariantProps as TagVariants } from '../tag/Tag.types'
+import { VariantProps as TagVariants } from '../../atoms/tag/Tag.types'
 import { Table } from './Table'
 
 const meta: Meta<typeof Table> = {

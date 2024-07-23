@@ -1,5 +1,5 @@
 export type VariantProps = 'default' | 'tag'
-import { VariantProps as TagVariants } from '../tag/Tag.types'
+import { VariantProps as TagVariants } from '../../atoms/tag/Tag.types'
 
 export interface Props {
   variant?: VariantProps
