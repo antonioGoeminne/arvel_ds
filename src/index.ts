@@ -1,1 +1,2 @@
-export * from './stories/atoms'
+export * from './atoms'
+export * from './molecules'
