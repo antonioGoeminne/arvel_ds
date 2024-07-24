@@ -25,5 +25,13 @@ jobs:
       - name: yarn install
         run: yarn
 
+      - name: Run test and report issues
+        run: yarn test
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build
         run: npm run build
