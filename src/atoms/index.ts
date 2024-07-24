@@ -1,5 +1,6 @@
 export * from './avatar/Avatar'
 export * from './button/Button'
+export * from './Logo/Logo'
 export * from './tableCell/TableCell'
 export * from './tag/Tag'
 export * from './textfield/Textfield'
