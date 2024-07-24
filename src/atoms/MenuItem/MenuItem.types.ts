@@ -9,4 +9,5 @@ export interface Props {
   label: string
   state: boolean
   Icon?: icon
+  WithTag?: React.ReactNode
 }

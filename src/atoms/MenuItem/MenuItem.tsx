@@ -8,11 +8,17 @@ const iconStyle = {
   height: '14px'
 }
 
-export const MenuItem: React.FC<Props> = ({ label, state = false, Icon }) => {
+export const MenuItem: React.FC<Props> = ({
+  label,
+  state = false,
+  Icon,
+  WithTag
+}) => {
   return (
     <Styled.Container state={state}>
       {Icon && <Icon style={{ ...iconStyle }} />}
       <Styled.Label>{label}</Styled.Label>
+      {WithTag ? WithTag : null}
     </Styled.Container>
   )
 }
