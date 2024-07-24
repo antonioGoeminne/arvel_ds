@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { Avatar } from './Avatar'
 import { Props } from './Avatar.types'
 
-describe('Avatar', () => {
+describe('Avatar test', () => {
   let defaultProps: Props
 
   beforeEach(() => {
