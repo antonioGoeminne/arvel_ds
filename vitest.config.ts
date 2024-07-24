@@ -12,7 +12,6 @@ export default mergeConfig(
       coverage: {
         exclude: [
           'commitlint.config.cjs',
-          'tailwind.config.js',
           '.eslintrc.cjs',
           'vite.config.ts',
           'vitest.config.ts',
@@ -20,7 +19,8 @@ export default mergeConfig(
           '**/*.stories.ts',
           '**/*.styled.ts',
           'dist',
-          '.storybook'
+          '.storybook',
+          'plopfile.js'
         ]
         // thresholds: {
         //   lines: 10,
