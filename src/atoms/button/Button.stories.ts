@@ -1,35 +1,42 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from "./Button";
+import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   component: Button,
   parameters: {
-    layout: "centered",
+    layout: 'centered'
   },
   argTypes: {
     variant: {
-      options: ["primary", "secondary"],
-      description: "The visual style of main button",
-      control: { type: "radio" },
-    },
-  },
-};
+      options: ['primary', 'secondary', 'outlined'],
+      description: 'The visual style of main button',
+      control: { type: 'radio' }
+    }
+  }
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
-    variant: "primary",
-    label: "Primary button",
-  },
-};
+    variant: 'primary',
+    label: 'Primary button'
+  }
+}
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary",
-    label: "Secondary Button",
-  },
-};
+    variant: 'secondary',
+    label: 'Secondary Button'
+  }
+}
+
+export const Outlined: Story = {
+  args: {
+    variant: 'outlined',
+    label: 'Outlined Button'
+  }
+}

@@ -1,4 +1,4 @@
-export type VariantProps = 'primary' | 'secondary' | 'success'
+export type VariantProps = 'primary' | 'secondary' | 'success' | 'outlined'
 
 export interface Props {
   variant?: VariantProps

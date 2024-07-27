@@ -26,6 +26,14 @@ describe('Button', () => {
     expect(btn).toBeDefined()
     expect(btn.getAttribute('variant')).toBe('secondary')
   })
+  it('Should render the base button with outlined variant', () => {
+    defaultProps.variant = 'outlined'
+    render(<Button {...defaultProps} />)
+
+    const btn = screen.getByRole('button', { name: 'Hello world' })
+    expect(btn).toBeDefined()
+    expect(btn.getAttribute('variant')).toBe('outlined')
+  })
   it('should call the onClick callback', () => {
     render(<Button {...defaultProps} />)
     const btn = screen.getByRole('button', { name: 'Hello world' })

@@ -10,13 +10,32 @@ interface ButtonProps {
   variant: VariantProps
 }
 
-const getButtonColor = (variant: VariantProps): string => {
+const getButtonBg = (variant: VariantProps): string => {
   switch (variant) {
     case 'primary':
       return '#08c7d1'
 
     case 'secondary':
       return '#bf95b9'
+
+    case 'outlined':
+      return 'transparent'
+
+    default:
+      return '#1a303d'
+  }
+}
+
+const getButtonColor = (variant: VariantProps): string => {
+  switch (variant) {
+    case 'primary':
+      return '#fff'
+
+    case 'secondary':
+      return '#fff'
+
+    case 'outlined':
+      return '#00000'
 
     default:
       return '#1a303d'
@@ -32,10 +51,12 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 500;
   cursor: pointer;
   text-align: center;
-  background-color: ${(props) => getButtonColor(props.variant)};
+  background-color: ${(props) => getButtonBg(props.variant)};
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 0.25rem;
   padding: 0.4rem 0.8rem;
-  color: #fff;
+  color: ${(props) => getButtonColor(props.variant)};
+  text-decoration: ${(props) =>
+    props.variant === 'outlined' ? 'underline' : 'none'};
 `
