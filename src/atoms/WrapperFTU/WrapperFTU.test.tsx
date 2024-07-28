@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { Button } from '../button/Button'
 import { WrapperFTU } from './WrapperFTU'
@@ -13,7 +13,9 @@ describe('FTU component', () => {
       open: true,
       title: 'Anotá lo que te falta y encontralo más rapido',
       description:
-        'Escribí los productos que necesitás y buscalos cuando quieras.'
+        'Escribí los productos que necesitás y buscalos cuando quieras.',
+      actionLabel: 'Entendido',
+      onActionClick: vi.fn()
     }
   })
   it('should render component', () => {
@@ -32,7 +34,7 @@ describe('FTU component', () => {
     const wrapperFTU = screen.getByTestId('wrapperFTU')
     expect(wrapperFTU).toBeDefined()
 
-    const btn = screen.getByRole('button')
-    expect(btn).toBeDefined()
+    const btn = screen.getAllByRole('button')
+    expect(btn[1]).toBeDefined()
   })
 })

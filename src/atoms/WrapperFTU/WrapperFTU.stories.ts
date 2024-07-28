@@ -23,6 +23,7 @@ export const Default: Story = {
     open: true,
     title: 'Anotá lo que te falta y encontralo más rapido',
     description:
-      'Escribí los productos que necesitás y buscalos cuando quieras.'
+      'Escribí los productos que necesitás y buscalos cuando quieras.',
+    actionLabel: 'Entendido'
   }
 }
