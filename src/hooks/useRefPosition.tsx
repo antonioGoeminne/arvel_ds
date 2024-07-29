@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-interface UserRefPosition {
+export interface UserRefPosition {
   y: number
   height: number
   width: number

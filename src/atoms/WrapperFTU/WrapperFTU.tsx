@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { useRefPosition } from '../../hooks/useRefPosition'
 import { Button } from '../button/Button'
+import { calcPosition } from './utils/calcPosition'
 import * as Styled from './WrapperFTU.styled'
 import { Props } from './WrapperFTU.types'
 
@@ -20,42 +21,11 @@ export const WrapperFTU: React.FC<Props> = ({
   const style = useRefPosition(ref)
   const styleRef = useRefPosition(messageRef)
 
-  const calcPosition = (): { top: string | number; left: string | number } => {
-    if (!pointerPosition) {
-      return {
-        left: style.x,
-        top: (style.y || 0) + (style.height || 0) + 10
-      }
-    }
-
-    switch (pointerPosition) {
-      case 'top-left':
-        return {
-          left: style.x,
-          top: (style.y || 0) + (style.height || 0) + 10
-        }
-      case 'bottom-left':
-        return {
-          left: style.x,
-          top: (style.y || 0) - (styleRef.height || 0) - 10
-        }
-      case 'bottom-right':
-        return {
-          left: style.x - style.width - (10 + styleRef.padding),
-          top: (style.y || 0) - (styleRef.height || 0) - 10
-        }
-      case 'left-top':
-        return {
-          left: style.x + style.width + 10,
-          top: style.y
-        }
-      default:
-        return {
-          left: style.x - styleRef.width + (10 + styleRef.padding),
-          top: (style.y || 0) + (style.height || 0) + 10
-        }
-    }
-  }
+  const { top, left } = calcPosition({
+    pointerPosition,
+    elStyle: style,
+    elStyleMessage: styleRef
+  })
 
   React.useEffect(() => {
     window.document.body.style.overflow = 'hidden'
@@ -69,8 +39,8 @@ export const WrapperFTU: React.FC<Props> = ({
       <Styled.ChildrenContainer ref={ref}>{children}</Styled.ChildrenContainer>
       <Styled.ContainerMessage
         ref={messageRef}
-        top={calcPosition().top}
-        left={calcPosition().left}
+        top={top}
+        left={left}
       >
         <Styled.Icon pointerPosition={pointerPosition} />
         <Styled.Title>{title}</Styled.Title>
