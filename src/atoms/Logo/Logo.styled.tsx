@@ -9,7 +9,7 @@ interface ContainerProps {
 const calcWidth = (size: Size): string => {
   switch (size) {
     case 'default':
-      return '180px'
+      return '140px'
 
     case 'small':
       return '70px'
