@@ -16,7 +16,12 @@ const meta: Meta<typeof Sidebar> = {
   parameters: {
     layout: 'centered'
   },
-  argTypes: {},
+  argTypes: {
+    open: {
+      options: [true, false],
+      control: { type: 'radio' }
+    }
+  },
   args: {}
 }
 

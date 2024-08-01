@@ -6,9 +6,12 @@ import { MenuItem } from '../../atoms/MenuItem'
 import * as Styled from './Sidebar.styled'
 import { Props } from './Sidebar.types'
 
-export const Sidebar: React.FC<Props> = ({ options }) => {
+export const Sidebar: React.FC<Props> = ({ open = true, options }) => {
   return (
-    <Styled.Container data-testid="sidebar">
+    <Styled.Container
+      open={open}
+      data-testid="sidebar"
+    >
       <Logo />
       <Styled.Separator>
         <Styled.ListContainer>

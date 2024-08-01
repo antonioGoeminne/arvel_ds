@@ -1,13 +1,18 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+interface ContainerProps {
+  open?: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${(props) => (props.open ? '0' : '-300px')};
   height: 100vh;
   width: 270px;
   user-select: none;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.35s;
 `
 export const ListContainer = styled.div`
   display: flex;
