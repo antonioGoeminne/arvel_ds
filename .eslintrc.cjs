@@ -26,12 +26,21 @@ module.exports = {
     }
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'simple-import-sort', 'unused-imports'],
+  plugins: [
+    'react-refresh',
+    'simple-import-sort',
+    'unused-imports',
+    'jest-dom'
+  ],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true }
     ],
+    'jest-dom/prefer-checked': 'error',
+    'jest-dom/prefer-enabled-disabled': 'error',
+    'jest-dom/prefer-required': 'error',
+    'jest-dom/prefer-to-have-attribute': 'error',
     'no-console': 'warn',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
